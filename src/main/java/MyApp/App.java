@@ -8,11 +8,10 @@ import static spark.Spark.port;
 import static spark.Spark.post;
 
 
-//import org.apache.logging.log4j.LogManager;
-//import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.ArrayList;;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +19,6 @@ import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
 //git addimport java.security.GeneralSecurityException;
-import java.util.ArrayList;
 
 public class App {
     public String getGreeting() {
@@ -30,12 +28,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
 
-        //Logger logger = LogManager.getLogger(App.class);
-        //logger.error("hello world");
+        Logger logger = LogManager.getLogger(App.class);
+        int port = Integer.parseInt(System.getenv("PORT"));
+        port(port);
+        logger.error("Current port number:" + port);
 
-        //int port = Integer.parseInt(System.getenv("PORT"));
-        //port(port);
-        
         port(getHerokuAssignedPort());
         get("/", (req, res) -> "Hello, World");
 
