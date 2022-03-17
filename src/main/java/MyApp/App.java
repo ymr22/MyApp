@@ -85,21 +85,15 @@ public class App {
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 
-    /*public static boolean search(ArrayList<Integer> array, int e) {
-        System.out.println("inside search");
-        if (array == null) return false;
-        for (int elt : array) {
-            if (elt == e) return true;
-        }
-        return false;
-    }*/
-
     public static boolean searchInRemainderedArray(ArrayList<Integer> arr, int k, int number) {
 
         boolean control = false;
         ArrayList<Integer> newArray = new ArrayList<>();
 
-        if(number <= 0)
+        if(number < 0)
+            return false;
+
+        if(k == 0)
             return false;
 
         if(arr.size() > 10 || arr.size() == 0)
