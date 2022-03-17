@@ -3,6 +3,8 @@
  */
 package MyApp;
 
+
+//import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 
 public class App {
@@ -14,13 +16,38 @@ public class App {
         System.out.println(new App().getGreeting());
     }
 
-    public static boolean search(ArrayList<Integer> array, int e) {
+    /*public static boolean search(ArrayList<Integer> array, int e) {
         System.out.println("inside search");
         if (array == null) return false;
         for (int elt : array) {
             if (elt == e) return true;
         }
         return false;
+    }*/
+
+    public static boolean searchInRemainderedArray(ArrayList<Integer> arr, int k, int number) {
+
+        boolean control = false;
+        ArrayList<Integer> newArray = new ArrayList<>();
+
+        if(number <= 0)
+            return false;
+
+        if(arr.size() > 10 || arr.size() == 0)
+            return false;
+        
+        for(int i = 0; i < arr.size(); i++) {
+            Integer x = arr.get(i);
+            if(x == null)
+                return false;
+            newArray.add(i,arr.get(i) % k);
+        }
+
+        for(int l = 0; l < newArray.size(); l++) {
+            if(newArray.get(l) == number)
+                control = true;
+        }
+        return control;
     }
     
 }

@@ -15,7 +15,7 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    @Test
+    /*@Test
     public void testFound() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         assertTrue(App.search(array, 4));
@@ -33,5 +33,41 @@ class AppTest {
     @Test
     public void testNull() {
         assertFalse(App.search(null, 1));
+    }*/
+
+
+
+
+
+    @Test
+    public void testLongerArray() {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 45, 74, 20, 35, 64, 58, 13, 5, 92));
+        int k = 3;
+        int number = 4;
+        assertFalse(App.searchInRemainderedArray(arr, k, number));
+    }
+
+    @Test
+    public void testZero() {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 45, 74, 20, 35, 64, 58, 13, 5, 92));     
+        int k = 5;
+        int number = 0;
+        assertFalse(App.searchInRemainderedArray(arr, k, number));
+    }
+
+    @Test
+    public void testNegativeNumber() {
+        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 45, 74, 20, 35, 64, 58, 13, 5, 92));     
+        int k = 5;
+        int number = -7;
+        assertFalse(App.searchInRemainderedArray(arr, k, number));
+    }
+
+    @Test
+    public void testEmptyArrayList() {
+        ArrayList<Integer> arr = new ArrayList<>();     
+        int k = 5;
+        int number = 7;
+        assertFalse(App.searchInRemainderedArray(arr, k, number));
     }
 }
