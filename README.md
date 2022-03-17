@@ -1,7 +1,1 @@
-.gradle
-build
-*.settings
-*.classpath
-*.project
-bin/*
-.vscode/*
+Demo site: https://enigmatic-forest-19797.herokuapp.com/compute
